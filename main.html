@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-[#1E1E1E]">
+    <section class="max-w-md min-h-screen mx-auto bg-gray-100 p-5">
+       <!-- header part html start -->
+        <header>
+            <div class="flex justify-between items-center">
+                <div class="flex justify-around items-center">
+                    <img class="w-12" src="./assets/image/Group.png" alt="">
+                    <div>
+                        <p class="text-2xl text-black font-bold">$ <span id="main-blance">4500</span></p>
+                        <p class="text-lg text-gray-600">Available Balance</p>
+                    </div>
+                </div>
+                    <div>
+                        <button class="text-xl rounded-xl bg-transparent border-2 border-gray-300 py-3 px-4 text-gray-600"><i class="fa-solid fa-right-from-bracket -rotate-180"></i>Logout</button>
+                    </div>
+            </div>
+        </header>
+        <!-- welcome part in html start -->
+         <div>
+            <h1 class="text-2xl text-black font-extrabold mt-8">🔥 Welcome to Payooo!</h1>
+            <p class="text-gray-600 mt-2">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+         </div>
+        <!-- Method part in html start -->
+         <div class="grid grid-cols-3 gap-2 mt-10">
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+                <img class="w-6" src="./assets/image/wallet1.png" alt="">
+                <p class="text-sm text-gray-600 mt-1">Add Money</p>
+            </div>
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+                <img class="w-6" src="./assets/image/send1.png" alt="">
+                <p class="text-sm text-gray-600 mt-1">Cashout</p>
+            </div>
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+                <img class="w-6" src="./assets/image/money1.png" alt="">
+                <p class="text-sm text-gray-600 mt-1">Transfer Money</p>
+            </div>
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+                <img class="w-6" src="./assets/image/bonus1.png" alt="">
+                <p class="text-sm text-gray-400 mt-1">Get Bonus</p>
+            </div>
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+                <img class="w-6" src="./assets/image/purse1.png" alt="">
+                <p class="text-sm text-gray-600 mt-1">Pay Bill</p>
+            </div>
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+                <img class="w-6" src="./assets/image/transaction1.png" alt="">
+                <p class="text-sm text-gray-600 mt-1">Transaction</p>
+            </div>
+
+         </div>
+
+         <!-- add money input field html -->
+         <div class="w-full mt-10">
+            <div class="">
+                <legend class="text-xl font-bold">Add Money</legend>
+              <div class="bg-white p-5 rounded-3xl w-full mt-10">
+                <div class="">
+                  <fieldset class="fieldset">
+                    <label class="text-lg text-gray-600 font-semibold">Select a Bank</label>
+                    <select class="select w-full rounded-full">
+                        <option disabled selected>Select Bank</option>
+                        <option value="Bkash">Bkash</option>
+                        <option value="Nagad">Nagad</option>
+                        <option class="Rocket">Rocket</option>
+                        <option class="Dbbl">Dbbl</option>
+                      </select>
+                    <label class="text-lg text-gray-600 font-semibold">Bank Account Number</label>
+                    <input id="input-number" value="01977858666" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Your Number" required/>
+
+                    <label class="text-lg text-gray-600 font-semibold">Amount to Add</label>
+                    <input id="Amount-number" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Your Number" required/>
+
+                    <label class="text-lg text-gray-600 font-semibold">Pin Number</label>
+                    <input id="pin-number" value="1236" type="text" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter 4 Digit Pin" required/>
+
+                    <button id="btn-add-money" class="btn bg-[#0874F2] rounded-full text-xl text-white py-6 font-bold mt-4">Add Money</button>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script/addMoney.js"></script>
+</body>
+</html>
