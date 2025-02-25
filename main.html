@@ -32,39 +32,36 @@
          </div>
         <!-- Method part in html start -->
          <div class="grid grid-cols-3 gap-2 mt-10">
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+            <div id="Add-Money-box" class="border border-gray-400 p-4 rounded-xl justify-items-center active">
                 <img class="w-6" src="./assets/image/wallet1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Add Money</p>
-            </div>
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+           </div>
+            <div id="CashOut-box" class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/send1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Cashout</p>
             </div>
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+            <div id="Transfer-Money" class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/money1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Transfer Money</p>
             </div>
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/bonus1.png" alt="">
                 <p class="text-sm text-gray-400 mt-1">Get Bonus</p>
             </div>
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/purse1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Pay Bill</p>
             </div>
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center">
+            <div class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/transaction1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Transaction</p>
             </div>
-
          </div>
 
          <!-- add money input field html -->
-         <div class="w-full mt-10">
-            <div class="">
+          <div id="AddMoney" class="w-full mt-10">
                 <legend class="text-xl font-bold">Add Money</legend>
               <div class="bg-white p-5 rounded-3xl w-full mt-10">
-                <div class="">
                   <fieldset class="fieldset">
                     <label class="text-lg text-gray-600 font-semibold">Select a Bank</label>
                     <select class="select w-full rounded-full">
@@ -85,12 +82,30 @@
 
                     <button id="btn-add-money" class="btn bg-[#0874F2] rounded-full text-xl text-white py-6 font-bold mt-4">Add Money</button>
                   </fieldset>
-                </div>
               </div>
-            </div>
-        </div>
+          </div>
+
+         <!-- cashout input field html start -->
+         <div id="cashOut" class="w-full mt-10">
+            <legend class="text-xl font-bold">Cash Out</legend>
+          <div class="bg-white p-5 rounded-3xl w-full mt-10">
+              <fieldset class="fieldset">
+                <label class="text-lg text-gray-600 font-semibold">Agent Number</label>
+                <input id="input-cashout-num" value="01977858666" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter 11 digit number" required/>
+
+                <label class="text-lg text-gray-600 font-semibold">Amount</label>
+                <input id="Amount-number" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter amount to withdraw" required/>
+
+                <label class="text-lg text-gray-600 font-semibold">Pin Number</label>
+                <input id="pin-cashout-number" value="1236" type="text" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter 4 digit pin number" required/>
+
+                <button id="btn-cashout" class="btn bg-[#0874F2] rounded-full text-xl text-white py-6 font-bold mt-4">Withdraw Money</button>
+              </fieldset>
+          </div>
+         </div>
     </section>
 
     <script src="./script/addMoney.js"></script>
+    <script src="./script/toggle.js"></script>
 </body>
 </html>
