@@ -1,53 +1,88 @@
 // add-money method in js
-
 document.getElementById('btn-add-money')
     .addEventListener('click', function(event){
          event.preventDefault();
-         const amountNum = document.getElementById('Amount-number').value;
-         const convertAmountNum = parseFloat(amountNum);
-         const mainBalance = document.getElementById('main-balance').innerText;
-         const converMainBalance = parseFloat(mainBalance);
-         const pinNum = document.getElementById('pin-number').value;
-         const convertPinNum = parseInt(pinNum);
-         if(convertPinNum === 1234){
-            if(convertAmountNum > 0){
-                const sum = converMainBalance + convertAmountNum;
-                document.getElementById('main-balance').innerText = sum ;
-            }
-            else{
-                alert('typed a Amount');
-            }
-            
+         const amountNum = getInputValueID('Amount-number');
+         const mainBalance = getInnerTextValueID('main-balance');
+         const pinNum = getInputValueID('pin-number');
+         const addAccountNumber = document.getElementById('bank-acc-num').value;
+         
+         if(addAccountNumber.length === 11 && addAccountNumber.startsWith('01')){
+            if(pinNum === 1234){
+                if(amountNum > 0){
+                    const sum = mainBalance + amountNum;  
+                    setInnerTextIDandValue('main-balance', sum);
+
+                const container = document.getElementById('transactionHistory');
+
+                const div = document.createElement('div');
+                div.innerHTML=`
+                <div class="flex justify-between items-center bg-white px-2 py-1 rounded-2xl mt-5">
+                 <img src="assets/image/wallet1.png" alt="">
+                 <div class="text-lg text-gray-600 font-semibold">
+                     <p>Added a Money ${amountNum} tk </p>
+                     <p>From ${addAccountNumber} This Account</p>
+                 </div>
+                   <i class="fas fa-ellipsis-v"></i>
+                 </div>
+                `
+                container.appendChild(div);
+
+                }
+                else{
+                    alert('typed a Amount');
+                }
+                
+             }
+             else{
+                alert("typed a wrong pin")
+             }
          }
          else{
-            alert("typed a wrong pin")
+            alert("plz write a valid account number")
          }
     })
 
 
 // cashOut method js
-
 document.getElementById('btn-cashout')
     .addEventListener('click', function(event){
         event.preventDefault();
-        const cashOutAmountNum = document.getElementById('cahout-amount-num').value;
-        const convertCashOutNum = parseFloat(cashOutAmountNum);
-        const mainBalance = document.getElementById('main-balance').innerText;
-        const convertMainBalance = parseFloat(mainBalance);
-        const cashOutPinNum = document.getElementById('cashOut-pin-num').value;
-        const convertPinNUm = parseInt(cashOutPinNum);
+        const cashAmountNum = getInputValueID('cahout-amount-num');
+        const cashMainBalance = getInnerTextValueID('main-balance');
+        const cashPinNum = getInputValueID('cashOut-pin-num');
+        const cashAccNum = document.getElementById('cashOut-acc-num').value;
+        console.log(cashAccNum)
+      
+            if(cashPinNum === 1234){
+                if(cashAmountNum <= cashMainBalance){
+                    const sum = cashMainBalance - cashAmountNum;
+                    setInnerTextIDandValue('main-balance', sum);
 
-        if(convertPinNUm === 1234){
-            if(convertCashOutNum > 0){
-                const sum = convertMainBalance - convertCashOutNum;
-                document.getElementById('main-balance').innerText = sum;
-                console.log(sum)
-            }else{
-                alert('typed a valid amount number');
+                    const container = document.getElementById('transactionHistory');
+
+                    const div = document.createElement('div');
+                    div.innerHTML=`
+                    <div class="flex justify-between items-center bg-white px-2 py-1 rounded-2xl mt-5">
+                     <img src="assets/image/wallet1.png" alt="">
+                     <div class="text-lg text-gray-600 font-semibold">
+                         <p>Cash Out ${cashAmountNum} tk </p>
+                         <p>From ${cashAccNum} This Account</p>
+                     </div>
+                       <i class="fas fa-ellipsis-v"></i>
+                     </div>
+                    `
+                    container.appendChild(div);
+
+                }else{
+                    alert('typed a valid amount number');
+                }
             }
-        }
-        else{
-            alert("your pin is wrong");
-        }
+            else{
+                alert("your pin is wrong");
+            }
 
     })
+
+
+

@@ -32,7 +32,7 @@
          </div>
         <!-- Method part in html start -->
          <div class="grid grid-cols-3 gap-2 mt-10">
-            <div id="Add-Money-box" class="border border-gray-400 p-4 rounded-xl justify-items-center active">
+            <div id="Add-Money-box" class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/wallet1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Add Money</p>
            </div>
@@ -52,7 +52,7 @@
                 <img class="w-6" src="./assets/image/purse1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Pay Bill</p>
             </div>
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
+            <div id="transactionHis" class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/transaction1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Transaction</p>
             </div>
@@ -72,7 +72,7 @@
                         <option class="Dbbl">Dbbl</option>
                       </select>
                     <label class="text-lg text-gray-600 font-semibold">Bank Account Number</label>
-                    <input id="input-number" value="01977858666" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Your Number" required/>
+                    <input id="bank-acc-num" value="01977858666" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Your Number" required/>
 
                     <label class="text-lg text-gray-600 font-semibold">Amount to Add</label>
                     <input id="Amount-number" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Your Number" required/>
@@ -91,7 +91,7 @@
           <div class="bg-white p-5 rounded-3xl w-full mt-10">
               <fieldset class="fieldset">
                 <label class="text-lg text-gray-600 font-semibold">Agent Number</label>
-                <input id="input-cashout-num" value="01977858666" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter 11 digit number" required/>
+                <input id="cashOut-acc-num" value="01977858666" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter 11 digit number" required/>
 
                 <label class="text-lg text-gray-600 font-semibold">Amount</label>
                 <input id="cahout-amount-num" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter amount to withdraw" required/>
@@ -103,8 +103,18 @@
               </fieldset>
           </div>
          </div>
+
+         <!-- transaction history part in html -->
+          <div id="transactionHistory" class="">
+           <div class="flex justify-between items-center mt-5">
+             <h1 class="text-2xl font-bold">Latest Payment</h1>
+             <p class="text-gray-600 font-bold">View All</p>
+           </div>
+            
+          </div>
     </section>
 
+     <script src="./script/utilitis.js"></script>
     <script src="./script/addMoney.js"></script>
     <script src="./script/toggle.js"></script>
 </body>
