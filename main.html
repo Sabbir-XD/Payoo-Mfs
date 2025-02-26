@@ -25,11 +25,13 @@
                     </div>
             </div>
         </header>
+
         <!-- welcome part in html start -->
          <div>
             <h1 class="text-2xl text-black font-extrabold mt-8">🔥 Welcome to Payooo!</h1>
             <p class="text-gray-600 mt-2">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
          </div>
+
         <!-- Method part in html start -->
          <div class="grid grid-cols-3 gap-2 mt-10">
             <div id="Add-Money-box" class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
@@ -44,11 +46,11 @@
                 <img class="w-6" src="./assets/image/money1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Transfer Money</p>
             </div>
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
+            <div id="Bonus-Coupon" class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/bonus1.png" alt="">
                 <p class="text-sm text-gray-400 mt-1">Get Bonus</p>
             </div>
-            <div class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
+            <div id="Pay-Bill" class="border border-gray-400 p-4 rounded-xl justify-items-center hover:bg-blue-100">
                 <img class="w-6" src="./assets/image/purse1.png" alt="">
                 <p class="text-sm text-gray-600 mt-1">Pay Bill</p>
             </div>
@@ -104,14 +106,76 @@
           </div>
          </div>
 
+         <!-- transfer money in html start -->
+         <div id="TransferMoney" class="w-full mt-10">
+            <legend class="text-xl font-bold">Transfer Money</legend>
+          <div class="bg-white p-5 rounded-3xl w-full mt-10">
+              <fieldset class="fieldset">
+                <label class="text-lg text-gray-600 font-semibold">User Account Number</label>
+                <input id="tarnsfer-acc-num" value="01977858666" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter 11 digit number" required/>
+
+                <label class="text-lg text-gray-600 font-semibold">Amount</label>
+                <input id="transfer-amount-num" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter amount to transfer" required/>
+
+                <label class="text-lg text-gray-600 font-semibold">Pin Number</label>
+                <input id="transfer-pin-num" value="1236" type="text" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter 4 digit pin number" required/>
+
+                <button id="btn-transfer" class="btn bg-[#0874F2] rounded-full text-xl text-white py-6 font-bold mt-4">Send Now</button>
+              </fieldset>
+          </div>
+         </div>
+
+         <!-- bonus part in html start -->
+         <div id="bonusCoupon" class="w-full mt-10">
+            <legend class="text-xl font-bold">Get Bonus</legend>
+          <div class="bg-white p-5 rounded-3xl w-full mt-10">
+              <fieldset class="fieldset">        
+
+                <label class="text-lg text-gray-600 font-semibold">Enter Bonus Coupon Code</label>
+                <input id="coupon-code" type="text" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter your coupon" required/>
+
+                <button id="btn-transfer" class="btn bg-[#0874F2] rounded-full text-xl text-white py-6 font-bold mt-4">Send Now</button>
+              </fieldset>
+          </div>
+         </div>
+
+         <!-- pay bill part in html start -->
+         <div id="payBill" class="w-full mt-10">
+            <legend class="text-xl font-bold">Pay Bill</legend>
+          <div class="bg-white p-5 rounded-3xl w-full mt-10">
+              <fieldset class="fieldset">
+                <label class="text-lg text-gray-600 font-semibold">Select To Pay</label>
+                <select id="payBillSelect" class="select w-full rounded-full">
+                    <option disabled selected>Select Method</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Water">Water</option>
+                    <option value="Internet">Internet</option>
+                    <option value="TV">TV</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Gov. Fees">Gov. Fees</option>
+                  </select>
+                <label class="text-lg text-gray-600 font-semibold">Biller Account Number</label>
+                <input id="biller-Number" value="01977858666" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter account number" required/>
+
+                <label class="text-lg text-gray-600 font-semibold">Amount to Pay</label>
+                <input id="pay-Amount-Num" type="number" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Add Amount to pay" required/>
+
+                <label class="text-lg text-gray-600 font-semibold">Pin Number</label>
+                <input id="pay-pin-number" value="1236" type="text" class="input rounded-full w-full bg-[#F4F5F7]" placeholder="Enter 4 Digit Pin" required/>
+
+                <button id="btn-Pay-Bill" class="btn bg-[#0874F2] rounded-full text-xl text-white py-6 font-bold mt-4">pay now</button>
+              </fieldset>
+          </div>
+         </div>
          <!-- transaction history part in html -->
-          <div id="transactionHistory" class="">
+         <div id="transactionHistory" class="">
            <div class="flex justify-between items-center mt-5">
              <h1 class="text-2xl font-bold">Latest Payment</h1>
              <p class="text-gray-600 font-bold">View All</p>
            </div>
             
-          </div>
+         </div>
+
     </section>
 
      <script src="./script/utilitis.js"></script>

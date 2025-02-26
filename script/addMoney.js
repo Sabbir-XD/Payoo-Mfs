@@ -1,4 +1,4 @@
-// add-money method in js
+// Add-money method in js
 document.getElementById('btn-add-money')
     .addEventListener('click', function(event){
          event.preventDefault();
@@ -44,7 +44,8 @@ document.getElementById('btn-add-money')
     })
 
 
-// cashOut method js
+
+// cashOut money method js
 document.getElementById('btn-cashout')
     .addEventListener('click', function(event){
         event.preventDefault();
@@ -82,6 +83,97 @@ document.getElementById('btn-cashout')
                 alert("your pin is wrong");
             }
 
+    })
+
+
+
+// Transfer Money money method in js
+document.getElementById('btn-transfer')
+    .addEventListener('click', function(event){
+         event.preventDefault();
+         const transferAccNum = document.getElementById('tarnsfer-acc-num').value;
+         const transferAmount = getInputValueID('transfer-amount-num');
+         const transferPinNum = getInputValueID('transfer-pin-num');
+         const tranferMainBalance = getInnerTextValueID('main-balance');
+
+         if(transferAccNum.length === 11 && transferAccNum.startsWith('01')){
+            if(transferPinNum === 1234){
+               if(transferAmount <= tranferMainBalance && transferAmount > 0){
+                    const sum = tranferMainBalance -  transferAmount ;
+                    setInnerTextIDandValue('main-balance', sum);
+                  
+                    const container = document.getElementById('transactionHistory');
+
+                    const div = document.createElement('div');
+                    div.innerHTML =`
+                    <div class="flex justify-between items-center bg-white px-2 py-1 rounded-2xl mt-5">
+                     <img src="assets/image/wallet1.png" alt="">
+                     <div class="text-lg text-gray-600 font-semibold">
+                         <p>Transfer ${transferAmount} tk </p>
+                         <p>From ${transferAccNum} This Account</p>
+                     </div>
+                       <i class="fas fa-ellipsis-v"></i>
+                     </div>
+                    `
+                    container.appendChild(div);
+    
+               }else{
+                   alert('invalid Amount Number')
+               }
+            }else{
+                alert('invalid Pin Number')
+            }
+         }else{
+           alert('invalid account number')
+         }
+    })
+
+    
+//pay bill money method in js
+document.getElementById('btn-Pay-Bill')
+    .addEventListener('click', function(event){
+        const selectValue = document.getElementById('payBillSelect').value;
+        console.log(selectValue);
+        const payAccNum = document.getElementById('biller-Number').value;
+        const payAmountNum = getInputValueID('pay-Amount-Num');
+        const payPinNum = getInputValueID('pay-pin-number')
+        const payMainBalance = getInnerTextValueID('main-balance');
+
+        if(payAccNum.length === 11 && payAccNum.startsWith('01') ){
+            if(payAmountNum <= payMainBalance && payAmountNum > 0){
+               if(payPinNum === 1234){
+                const sum = payMainBalance - payAmountNum;
+                setInnerTextIDandValue('main-balance', sum);
+
+                alert('Deducted Successfully')
+
+                const container = document.getElementById('transactionHistory');
+
+                const div = document.createElement('div');
+                    div.innerHTML =`
+                    <div class="flex justify-between items-center bg-white px-2 py-1 rounded-2xl mt-5">
+                     <img src="assets/image/wallet1.png" alt="">
+                     <div class="text-lg text-gray-600 font-semibold">
+                         <p>${selectValue} Bill Pay ${payAmountNum} tk </p>
+                         <p>From ${payAccNum} This Account</p>
+                     </div>
+                       <i class="fas fa-ellipsis-v"></i>
+                     </div>
+                    `
+                    container.appendChild(div);
+
+               }else{
+                 alert('invalid Pin Number')
+               }
+            }else{
+                alert('invalid Amount Number')
+            }
+        }else{
+            alert('invalid Account Number')
+        }
+       
+
+       
     })
 
 
