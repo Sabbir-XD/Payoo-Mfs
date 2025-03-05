@@ -177,4 +177,10 @@ document.getElementById('btn-Pay-Bill')
     })
 
 
+// logout button addEventListener used
+document.getElementById("log-out-btn")
+.addEventListener('click', function(event){
+    window.location.href = 'index.html';  
+});
+
 
